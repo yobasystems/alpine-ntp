@@ -1,92 +1,157 @@
-# alpine-ntp
+# NTP - Chrony Docker image running on Alpine Linux
+
+[![Docker Automated build](https://img.shields.io/docker/automated/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
+[![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
+
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.16.2-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
+[![Chrony Version](https://img.shields.io/badge/Chrony%20version-v4.3-green.svg?style=for-the-badge&logo=chrony)](https://chrony.tuxfamily.org/)
 
 
+This Docker image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasystems/alpine-ntp/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Chrony v4.3](https://chrony.tuxfamily.org/) (NTP) Network Time Protocol.
 
-## Getting started
+### Alpine Version 3.16.2 (Released 2022-08-09)
+##### Chrony Version 4.3
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+----
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## What is Alpine Linux?
+Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Docker images.
 
-## Add your files
+## What is Chrony?
+chrony is a versatile implementation of the Network Time Protocol (NTP). It can synchronise the system clock with NTP servers, reference clocks (e.g. GPS receiver), and manual input using wristwatch and keyboard. It can also operate as an NTPv4 (RFC 5905) server and peer to provide a time service to other computers in the network.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+It is designed to perform well in a wide range of conditions, including intermittent network connections, heavily congested networks, changing temperatures (ordinary computer clocks are sensitive to temperature), and systems that do not run continuosly, or run on a virtual machine.
 
+Typical accuracy between two machines synchronised over the Internet is within a few milliseconds; on a LAN, accuracy is typically in tens of microseconds. With hardware timestamping, or a hardware reference clock, sub-microsecond accuracy may be possible.
+
+Two programs are included in chrony, chronyd is a daemon that can be started at boot time and chronyc is a command-line interface program which can be used to monitor chronyd’s performance and to change various operating parameters whilst it is running.
+
+## Features
+
+* Minimal size only, minimal layers
+* Memory usage is minimal on a simple install.
+* Network Time Protocol (NTP) server and client
+
+
+## Architectures
+
+* ```:amd64```, ```:x86_64``` - 64 bit Intel/AMD (x86_64/amd64)
+* ```:arm64v8```, ```:aarch64``` - 64 bit ARM (ARMv8/aarch64)
+* ```:arm32v7```, ```:armhf``` - 32 bit ARM (ARMv7/armhf)
+
+##### PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
+
+## Tags
+
+* ```:latest``` latest branch based (Automatic Architecture Selection)
+* ```:master``` master branch usually inline with latest
+* ```:amd64```, ```:x86_64```  amd64 based on latest tag but amd64 architecture
+* ```:aarch64```, ```:arm64v8``` Armv8 based on latest tag but arm64 architecture
+* ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm32 architecture
+* ```:version``` Version tags e.g ```:4```, ```4.3```
+
+## Layers & Sizes
+
+![Version](https://img.shields.io/badge/version-amd64-blue.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-ntp/amd64.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-ntp/amd64.svg?style=for-the-badge)
+
+![Version](https://img.shields.io/badge/version-aarch64-blue.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-ntp/aarch64.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-ntp/aarch64.svg?style=for-the-badge)
+
+![Version](https://img.shields.io/badge/version-armhf-blue.svg?style=for-the-badge)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-ntp/armhf.svg?style=for-the-badge)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-ntp/armhf.svg?style=for-the-badge)
+
+
+## Volume structure
+
+### Environment Variables:
+
+### Main Chrony parameters:
+
+* `NTP_SERVERS` : time.cloudflare.com
+* `NTP_PORT` : 123
+* `NTP_MAXSKEW` : 1000.0
+* `NTP_MAXDISTANCE` : 8
+* `NTP_MAXPOLL` : 10
+* `NTP_MINPOLL` : 6
+* `NTP_MAXDELAY` : 0.5
+* `NTP_MAXJITTER` : 0.1
+* `NTP_MAXWANDER` : 0.001
+* `NTP_MAXTRACKING` : 0.5
+* `NTP_MAXSOURCES` : 3
+* `NTP_MAXAGE` : 0.5
+* `NTP_MAXCLOCK` : 0.5
+* `NTP_MAXDRIFT` : 0.5
+* `NTP_MAXSTEER` : 0.5
+* `NTP_MAXSYMMETRY` : 0.5
+* `NTP_MAXPENDING` : 0.5
+* `NTP_MAXHOLDOFF` : 0.5
+* `NTP_MAXJITTER` : 0.5
+
+## Creating an instance
+
+
+```bash
+docker run -d --name=ntp --restart=always --publish=123:123/udp yobasystems/alpine-ntp
 ```
-cd existing_repo
-git remote add origin https://gitlab.yoba.systems/docker/alpine-ntp.git
-git branch -M main
-git push -uf origin main
+
+It will create a new container, and set the time to the default which is time.cloudflare.com.
+
+## Docker Compose example:
+
+
+```yalm
+version: '3.9'
+
+services:
+  ntp:
+    build: .
+    image: yobasystems/alpine-ntp:latest
+    container_name: ntp
+    restart: always
+    ports:
+      - 123:123/udp
+    environment:
+      - NTP_SERVERS=time.cloudflare.com
+      - LOG_LEVEL=0
 ```
 
-## Integrate with your tools
+## Source Repositories
 
-- [ ] [Set up project integrations](https://gitlab.yoba.systems/docker/alpine-ntp/-/settings/integrations)
+* [Github - yobasystems/alpine-ntp](https://github.com/yobasystems/alpine-ntp)
 
-## Collaborate with your team
+* [Gitlab - yobasystems/alpine-ntp](https://gitlab.com/yobasystems/alpine-ntp)
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+* [Bitbucket - yobasystems/alpine-ntp](https://bitbucket.org/yobasystems/alpine-ntp/)
 
-## Test and Deploy
 
-Use the built-in continuous integration in GitLab.
+## Container Registries
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+* [Dockerhub - yobasystems/alpine-ntp](https://hub.docker.com/r/yobasystems/alpine-ntp/)
 
-***
+* [Quay.io - yobasystems/alpine-ntp](https://quay.io/repository/yobasystems/alpine-ntp)
 
-# Editing this README
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+## Links
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+* [Yoba Systems](https://www.yobasystems.co.uk/)
 
-## Name
-Choose a self-explaining name for your project.
+* [Github - Yoba Systems](https://github.com/yobasystems/)
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+* [Dockerhub - Yoba Systems](https://hub.docker.com/u/yobasystems/)
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+* [Quay.io - Yoba Systems](https://quay.io/organization/yobasystems)
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+* [Maintainer - Dominic Taylor](https://github.com/dominictayloruk)
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## Donation
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+[![BMAC](https://img.shields.io/badge/BUY%20ME%20A%20COFFEE-£5-blue.svg?style=for-the-badge&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/dominictayloruk?new=1)
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+[![BITCOIN](https://img.shields.io/badge/BTC-bc1q7hy8qmyvq7rw6slrna7yffcdnj9rcg4e9xjecc-blue.svg?style=for-the-badge&logo=bitcoin)](bitcoin:bc1q7hy8qmyvq7rw6slrna7yffcdnj9rcg4e9xjecc)
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+[![ETHEREUM](https://img.shields.io/badge/ETH-0xb6bE2e4da3d86b50Bdae1F9B6960c23dd87C532C-blue.svg?style=for-the-badge&logo=ethereum)](ethereum:0xb6bE2e4da3d86b50Bdae1F9B6960c23dd87C532C)
