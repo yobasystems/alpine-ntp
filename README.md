@@ -4,21 +4,21 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.17.0-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.17.2-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
 [![Chrony Version](https://img.shields.io/badge/Chrony%20version-v4.3-green.svg?style=for-the-badge&logo=chrony)](https://chrony.tuxfamily.org/)
 
 
 This Docker image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasystems/alpine-ntp/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Chrony v4.3](https://chrony.tuxfamily.org/) (NTP) Network Time Protocol.
 
-### Alpine Version 3.17.0 (Released 2022-11-22)
+### Alpine Version 3.17.2 (Released 2022-11-22)
 ##### Chrony Version 4.3
 
 ----
 
-## What is Alpine Linux?
+## 🏔️ What is Alpine Linux?
 Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Docker images.
 
-## What is Chrony?
+## 🕰️ What is Chrony?
 chrony is a versatile implementation of the Network Time Protocol (NTP). It can synchronise the system clock with NTP servers, reference clocks (e.g. GPS receiver), and manual input using wristwatch and keyboard. It can also operate as an NTPv4 (RFC 5905) server and peer to provide a time service to other computers in the network.
 
 It is designed to perform well in a wide range of conditions, including intermittent network connections, heavily congested networks, changing temperatures (ordinary computer clocks are sensitive to temperature), and systems that do not run continuosly, or run on a virtual machine.
@@ -27,22 +27,22 @@ Typical accuracy between two machines synchronised over the Internet is within a
 
 Two programs are included in chrony, chronyd is a daemon that can be started at boot time and chronyc is a command-line interface program which can be used to monitor chronyd’s performance and to change various operating parameters whilst it is running.
 
-## Features
+## ✨ Features
 
 * Minimal size only, minimal layers
 * Memory usage is minimal on a simple install.
 * Network Time Protocol (NTP) server and client
 
 
-## Architectures
+## 🏗️ Architectures
 
 * ```:amd64```, ```:x86_64``` - 64 bit Intel/AMD (x86_64/amd64)
 * ```:arm64v8```, ```:aarch64``` - 64 bit ARM (ARMv8/aarch64)
 * ```:arm32v7```, ```:armhf``` - 32 bit ARM (ARMv7/armhf)
 
-##### PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
+#### 📝 PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
 
-## Tags
+## 🏷️ Tags
 
 * ```:latest``` latest branch based (Automatic Architecture Selection)
 * ```:master``` master branch usually inline with latest
@@ -51,7 +51,7 @@ Two programs are included in chrony, chronyd is a daemon that can be started at 
 * ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm32 architecture
 * ```:version``` Version tags e.g ```:4```, ```4.3```
 
-## Layers & Sizes
+## 📏 Layers & Sizes
 
 ![Version](https://img.shields.io/badge/version-amd64-blue.svg?style=for-the-badge)
 ![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/yobasystems/alpine-ntp/amd64.svg?style=for-the-badge)
@@ -66,6 +66,7 @@ Two programs are included in chrony, chronyd is a daemon that can be started at 
 ![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/yobasystems/alpine-ntp/armhf.svg?style=for-the-badge)
 
 
+## 🚀 How to use this image
 ## Volume structure
 
 ### Environment Variables:
@@ -120,7 +121,13 @@ services:
       - LOG_LEVEL=0
 ```
 
-## Source Repositories
+## 🔍 Image contents & Vulnerability analysis
+
+| PACKAGE NAME          | PACKAGE VERSION | VULNERABILITIES |
+|-----------------------|-----------------|-----------------|
+
+
+## 📚 Source Repositories
 
 * [Github - yobasystems/alpine-ntp](https://github.com/yobasystems/alpine-ntp)
 
@@ -129,14 +136,14 @@ services:
 * [Bitbucket - yobasystems/alpine-ntp](https://bitbucket.org/yobasystems/alpine-ntp/)
 
 
-## Container Registries
+## 🐳 Container Registries
 
 * [Dockerhub - yobasystems/alpine-ntp](https://hub.docker.com/r/yobasystems/alpine-ntp/)
 
 * [Quay.io - yobasystems/alpine-ntp](https://quay.io/repository/yobasystems/alpine-ntp)
 
 
-## Links
+## 🔗 Links
 
 * [Yoba Systems](https://www.yobasystems.co.uk/)
 
@@ -148,7 +155,7 @@ services:
 
 * [Maintainer - Dominic Taylor](https://github.com/dominictayloruk)
 
-## Donation
+## 💰 Donation
 
 [![BMAC](https://img.shields.io/badge/BUY%20ME%20A%20COFFEE-£5-blue.svg?style=for-the-badge&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/dominictayloruk?new=1)
 
