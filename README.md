@@ -10,7 +10,7 @@
 
 This Docker image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasystems/alpine-ntp/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Chrony v4.3](https://chrony.tuxfamily.org/) (NTP) Network Time Protocol.
 
-### Alpine Version 3.18.0 (Released 2022-11-22)
+### Alpine Version 3.18.0 (Released 2023-05-09)
 ##### Chrony Version 4.3
 
 ----
