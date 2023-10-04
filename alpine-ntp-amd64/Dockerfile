@@ -1,4 +1,4 @@
-FROM yobasystems/alpine:3.18.3-amd64
+FROM yobasystems/alpine:3.18.4-amd64
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -6,8 +6,8 @@ ARG VCS_REF
 LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     architecture="amd64/x86_64" \
     chrony-version="4.3" \
-    alpine-version="3.18.3" \
-    build="22-Sep-2023" \
+    alpine-version="3.18.4" \
+    build="04-Oct-2023" \
     org.opencontainers.image.title="alpine-ntp" \
     org.opencontainers.image.description="Chrony Docker image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yoba.systems>" \
