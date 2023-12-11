@@ -4,14 +4,14 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.18.4-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
-[![Chrony Version](https://img.shields.io/badge/Chrony%20version-v4.3-green.svg?style=for-the-badge&logo=chrony)](https://chrony.tuxfamily.org/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.19.0-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
+[![Chrony Version](https://img.shields.io/badge/Chrony%20version-v4.5-green.svg?style=for-the-badge&logo=chrony)](https://chrony.tuxfamily.org/)
 
 
-This Docker image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasystems/alpine-ntp/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Chrony v4.3](https://chrony.tuxfamily.org/) (NTP) Network Time Protocol.
+This Docker image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasystems/alpine-ntp/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Chrony v4.5](https://chrony.tuxfamily.org/) (NTP) Network Time Protocol.
 
-### Alpine Version 3.18.4 (Released 2023-09-28)
-##### Chrony Version 4.3
+### Alpine Version 3.19.0 (Released 2023-12-07)
+##### Chrony Version 4.5
 
 ----
 
@@ -49,7 +49,7 @@ Two programs are included in chrony, chronyd is a daemon that can be started at 
 * ```:amd64```, ```:x86_64```  amd64 based on latest tag but amd64 architecture
 * ```:aarch64```, ```:arm64v8``` Armv8 based on latest tag but arm64 architecture
 * ```:armhf```, ```:arm32v7``` Armv7 based on latest tag but arm32 architecture
-* ```:version``` Version tags e.g ```:4```, ```4.3```
+* ```:version``` Version tags e.g ```:4```, ```4.5```
 
 ## 📏 Layers & Sizes
 
