@@ -8,7 +8,7 @@
 [![Chrony Version](https://img.shields.io/badge/Chrony%20version-v4.5-green.svg?style=for-the-badge&logo=chrony)](https://chrony.tuxfamily.org/)
 
 
-This Docker image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasystems/alpine-ntp/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Chrony v4.5](https://chrony.tuxfamily.org/) (NTP) Network Time Protocol.
+This Docker image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasystems/alpine-ntp/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Chrony](https://chrony.tuxfamily.org/) (NTP) Network Time Protocol.
 
 ### Alpine Version 3.19.0 (Released 2023-12-07)
 ##### Chrony Version 4.5
