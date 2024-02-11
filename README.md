@@ -4,13 +4,13 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.19.0-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.19.1-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
 [![Chrony Version](https://img.shields.io/badge/Chrony%20version-v4.5-green.svg?style=for-the-badge&logo=chrony)](https://chrony.tuxfamily.org/)
 
 
 This Docker image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasystems/alpine-ntp/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Chrony](https://chrony.tuxfamily.org/) (NTP) Network Time Protocol.
 
-### Alpine Version 3.19.0 (Released 2023-12-07)
+### Alpine Version 3.19.1 (Released 2023-01-26)
 ##### Chrony Version 4.5
 
 ----
