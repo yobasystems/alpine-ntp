@@ -1,6 +1,14 @@
 version: 2
 updates:
-  - package-ecosystem: "docker"
-    directory: "/"
+  - package-ecosystem: docker
+    directory: /alpine-ntp-amd64/
     schedule:
-      interval: "weekly"
+      interval: weekly
+  - package-ecosystem: docker
+    directory: /alpine-ntp-armhf/
+    schedule:
+      interval: weekly
+  - package-ecosystem: docker
+    directory: /alpine-ntp-aarch64/
+    schedule:
+      interval: weekly
