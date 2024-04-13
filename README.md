@@ -1,4 +1,4 @@
-# NTP - Chrony Docker image running on Alpine Linux
+# NTP - Chrony Container image running on Alpine Linux
 
 [![Docker Automated build](https://img.shields.io/docker/automated/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
@@ -8,7 +8,7 @@
 [![Chrony Version](https://img.shields.io/badge/Chrony%20version-v4.5-green.svg?style=for-the-badge&logo=chrony)](https://chrony.tuxfamily.org/)
 
 
-This Docker image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasystems/alpine-ntp/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Chrony](https://chrony.tuxfamily.org/) (NTP) Network Time Protocol.
+This Container image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasystems/alpine-ntp/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Chrony](https://chrony.tuxfamily.org/) (NTP) Network Time Protocol.
 
 ### Alpine Version 3.19.1 (Released 2023-01-26)
 ##### Chrony Version 4.5
@@ -16,7 +16,7 @@ This Docker image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasystem
 ----
 
 ## 🏔️ What is Alpine Linux?
-Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Docker images.
+Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Container images.
 
 ## 🕰️ What is Chrony?
 chrony is a versatile implementation of the Network Time Protocol (NTP). It can synchronise the system clock with NTP servers, reference clocks (e.g. GPS receiver), and manual input using wristwatch and keyboard. It can also operate as an NTPv4 (RFC 5905) server and peer to provide a time service to other computers in the network.
