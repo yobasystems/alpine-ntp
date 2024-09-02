@@ -25,7 +25,7 @@ It is designed to perform well in a wide range of conditions, including intermit
 
 Typical accuracy between two machines synchronised over the Internet is within a few milliseconds; on a LAN, accuracy is typically in tens of microseconds. With hardware timestamping, or a hardware reference clock, sub-microsecond accuracy may be possible.
 
-Two programs are included in chrony, chronyd is a daemon that can be started at boot time and chronyc is a command-line interface program which can be used to monitor chronyd’s performance and to change various operating parameters whilst it is running.
+Two programs are included in chrony, chronyd is a daemon that can be started at boot time and chronyc is a command-line interface program which can be used to monitor chronyd's performance and to change various operating parameters whilst it is running.
 
 ## ✨ Features
 
@@ -105,7 +105,7 @@ It will create a new container, and set the time to the default which is time.cl
 ## Docker Compose example:
 
 
-```yalm
+```yaml
 version: '3.9'
 
 services:
@@ -130,29 +130,24 @@ services:
 ## 📚 Source Repositories
 
 * [Github - yobasystems/alpine-ntp](https://github.com/yobasystems/alpine-ntp)
-
 * [Gitlab - yobasystems/alpine-ntp](https://gitlab.com/yobasystems/alpine-ntp)
-
 * [Bitbucket - yobasystems/alpine-ntp](https://bitbucket.org/yobasystems/alpine-ntp/)
 
 
 ## 🐳 Container Registries
 
 * [Dockerhub - yobasystems/alpine-ntp](https://hub.docker.com/r/yobasystems/alpine-ntp/)
-
 * [Quay.io - yobasystems/alpine-ntp](https://quay.io/repository/yobasystems/alpine-ntp)
+* [GHCR - yobasystems/alpine-ntp](https://ghcr.io/yobasystems/alpine-ntp)
 
 
 ## 🔗 Links
 
 * [Yoba Systems](https://www.yobasystems.co.uk/)
-
 * [Github - Yoba Systems](https://github.com/yobasystems/)
-
 * [Dockerhub - Yoba Systems](https://hub.docker.com/u/yobasystems/)
-
 * [Quay.io - Yoba Systems](https://quay.io/organization/yobasystems)
-
+* [GHCR - Yoba Systems](https://ghcr.io/yobasystems)
 * [Maintainer - Dominic Taylor](https://github.com/dominictayloruk)
 
 ## 💰 Donation
