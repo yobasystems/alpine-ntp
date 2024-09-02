@@ -13,14 +13,13 @@ include:
   image: yobasystems/alpine-docker:dind
   stage: build
   script:
-    - export COMMIT_TIME=$(git show -s --format=%ct $CI_COMMIT_SHA)
-    - echo "Build Timestamp ${COMMIT_TIME} - ${CI_COMMIT_SHORT_SHA}"
+    - echo "Build Timestamp ${CI_COMMIT_TIMESTAMP} - ${CI_COMMIT_SHORT_SHA}"
     - echo "Building for ARCH=${ARCH}, PLATFORM=${PLATFORM}"
     - apk add --update git
     - cd alpine-ntp-${ARCH}/
     - docker build
       --build-arg VCS_REF=${CI_COMMIT_SHORT_SHA}
-      --build-arg BUILD_DATE=${COMMIT_TIME}
+      --build-arg BUILD_DATE=${CI_COMMIT_TIMESTAMP}
       -t ${CI_REGISTRY_IMAGE}/${CI_COMMIT_SHORT_SHA}:${ARCH}
       --platform linux/${PLATFORM}
       .
