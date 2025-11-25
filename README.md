@@ -4,13 +4,13 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
 [![Docker Stars](https://img.shields.io/docker/stars/yobasystems/alpine-ntp.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/r/yobasystems/alpine-ntp/)
 
-[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.22.1-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
+[![Alpine Version](https://img.shields.io/badge/Alpine%20version-v3.22.2-green.svg?style=for-the-badge&logo=alpine-linux)](https://alpinelinux.org/)
 [![Chrony Version](https://img.shields.io/badge/Chrony%20version-v4.6.1-green.svg?style=for-the-badge&logo=chrony)](https://chrony.tuxfamily.org/)
 
 
 This Container image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasystems/alpine-ntp/) is based on the minimal [Alpine Linux](https://alpinelinux.org/) with [Chrony](https://chrony.tuxfamily.org/) (NTP) Network Time Protocol.
 
-### Alpine Version 3.22.1 (Released 2025-07-15)
+### Alpine Version 3.22.2 (Released 2025-10-08)
 ##### Chrony Version 4.6.1
 
 ----
@@ -54,15 +54,12 @@ Two programs are included in chrony, chronyd is a daemon that can be started at 
 ## 📏 Layers & Sizes
 
 ![Version](https://img.shields.io/badge/version-amd64-blue.svg?style=for-the-badge)
-![Docker Image Version (tag)](https://img.shields.io/docker/v/yobasystems/alpine-ntp/amd64.svg?style=for-the-badge)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-ntp/amd64.svg?style=for-the-badge)
 
 ![Version](https://img.shields.io/badge/version-aarch64-blue.svg?style=for-the-badge)
-![Docker Image Version (tag)](https://img.shields.io/docker/v/yobasystems/alpine-ntp/aarch64.svg?style=for-the-badge)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-ntp/aarch64.svg?style=for-the-badge)
 
 ![Version](https://img.shields.io/badge/version-armhf-blue.svg?style=for-the-badge)
-![Docker Image Version (tag)](https://img.shields.io/docker/v/yobasystems/alpine-ntp/armhf.svg?style=for-the-badge)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yobasystems/alpine-ntp/armhf.svg?style=for-the-badge)
 
 
@@ -131,7 +128,6 @@ services:
 
 * [Github - yobasystems/alpine-ntp](https://github.com/yobasystems/alpine-ntp)
 * [Gitlab - yobasystems/alpine-ntp](https://gitlab.com/yobasystems/alpine-ntp)
-* [Bitbucket - yobasystems/alpine-ntp](https://bitbucket.org/yobasystems/alpine-ntp/)
 
 
 ## 🐳 Container Registries
