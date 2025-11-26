@@ -113,6 +113,7 @@ amd64 ntp deploy:
     PLATFORM: amd64
   needs:
     - amd64 ntp build
+    - container_scanning_amd64
 
 arm32v7 ntp deploy:
   <<: *deploy_definition
@@ -124,6 +125,7 @@ arm32v7 ntp deploy:
     PLATFORM: arm/v7
   needs:
     - arm32v7 ntp build
+    - container_scanning_armhf
 
 arm64v8 ntp deploy:
   <<: *deploy_definition
@@ -135,6 +137,7 @@ arm64v8 ntp deploy:
     PLATFORM: arm64/v8
   needs:
     - arm64v8 ntp build
+    - container_scanning_aarch64
 
 manifest creation latest:
   image: yobasystems/alpine-docker:dind
