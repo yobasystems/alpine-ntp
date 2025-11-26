@@ -52,6 +52,8 @@ arm64v8 ntp build:
 
 sast:
   stage: test
+  variables:
+    CS_DOCKERFILE_PATH: "${{CI_PROJECT_NAME}}-${{ARCH}}/Dockerfile"
 
 .deploy_template: &deploy_definition
   image: yobasystems/alpine-docker:dind
