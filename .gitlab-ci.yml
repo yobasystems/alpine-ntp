@@ -9,6 +9,18 @@ include:
   - template: Security/Secret-Detection.gitlab-ci.yml
   - template: Security/SAST.gitlab-ci.yml
 
+container_scanning_amd64:
+  variables:
+    CS_DOCKERFILE_PATH: "alpine-ntp-amd64/Dockerfile"
+
+container_scanning_armhf:
+  variables:
+    CS_DOCKERFILE_PATH: "alpine-ntp-armhf/Dockerfile"
+
+container_scanning_aarch64:
+  variables:
+    CS_DOCKERFILE_PATH: "alpine-ntp-aarch64/Dockerfile"
+
 .build_template: &build_definition
   image: yobasystems/alpine-docker:dind
   stage: build
@@ -49,11 +61,6 @@ arm64v8_ntp_build:
   variables:
     ARCH: aarch64
     PLATFORM: arm64/v8
-
-.container_scanning_template: &container_scanning_definition
-  stage: test
-  variables:
-    CS_DOCKERFILE_PATH: "${{CI_PROJECT_NAME}}-${{ARCH}}/Dockerfile"
 
 .deploy_template: &deploy_definition
   image: yobasystems/alpine-docker:dind
