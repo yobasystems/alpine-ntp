@@ -26,7 +26,7 @@ include:
     - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token "$CI_REGISTRY" --password-stdin
     - docker push ${CI_REGISTRY_IMAGE}/${CI_COMMIT_SHORT_SHA}:${ARCH}
 
-amd64 ntp build:
+amd64_ntp_build:
   <<: *build_definition
   tags:
     - amd64
@@ -34,7 +34,7 @@ amd64 ntp build:
     ARCH: amd64
     PLATFORM: amd64
 
-arm32v7 ntp build:
+arm32v7_ntp_build:
   <<: *build_definition
   tags:
     - armhf
@@ -42,7 +42,7 @@ arm32v7 ntp build:
     ARCH: armhf
     PLATFORM: arm/v7
 
-arm64v8 ntp build:
+arm64v8_ntp_build:
   <<: *build_definition
   tags:
     - aarch64
@@ -50,7 +50,7 @@ arm64v8 ntp build:
     ARCH: aarch64
     PLATFORM: arm64/v8
 
-sast:
+.container_scanning_template: &container_scanning_definition
   stage: test
   variables:
     CS_DOCKERFILE_PATH: "${{CI_PROJECT_NAME}}-${{ARCH}}/Dockerfile"
@@ -103,7 +103,7 @@ sast:
         docker push ghcr.io/$DOCKER_REGISTRY_GHCR_REPO:${CI_COMMIT_TAG}-${ARCH2}
       fi
 
-amd64 ntp deploy:
+amd64_ntp_deploy:
   <<: *deploy_definition
   tags:
     - amd64
@@ -112,10 +112,10 @@ amd64 ntp deploy:
     ARCH2: x86_64
     PLATFORM: amd64
   needs:
-    - amd64 ntp build
+    - amd64_ntp_build
     - container_scanning_amd64
 
-arm32v7 ntp deploy:
+arm32v7_ntp_deploy:
   <<: *deploy_definition
   tags:
     - armhf
@@ -124,10 +124,10 @@ arm32v7 ntp deploy:
     ARCH2: arm32v7
     PLATFORM: arm/v7
   needs:
-    - arm32v7 ntp build
+    - arm32v7_ntp_build
     - container_scanning_armhf
 
-arm64v8 ntp deploy:
+arm64v8_ntp_deploy:
   <<: *deploy_definition
   tags:
     - aarch64
@@ -136,16 +136,16 @@ arm64v8 ntp deploy:
     ARCH2: arm64v8
     PLATFORM: arm64/v8
   needs:
-    - arm64v8 ntp build
+    - arm64v8_ntp_build
     - container_scanning_aarch64
 
-manifest creation latest:
+manifest_creation_latest:
   image: yobasystems/alpine-docker:dind
   stage: manifest
   needs:
-    - amd64 ntp deploy
-    - arm32v7 ntp deploy
-    - arm64v8 ntp deploy
+    - amd64_ntp_deploy
+    - arm32v7_ntp_deploy
+    - arm64v8_ntp_deploy
   rules:
     - if: $CI_COMMIT_TAG
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
@@ -174,11 +174,11 @@ manifest creation latest:
         create_and_push_manifest $repo latest
       done
 
-manifest creation version:
+manifest_creation_version:
   image: yobasystems/alpine-docker:dind
   stage: manifest
   needs:
-    - manifest creation latest
+    - manifest_creation_latest
   rules:
     - if: $CI_COMMIT_TAG
   script:
