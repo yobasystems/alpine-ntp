@@ -17,7 +17,7 @@ container_scanning_amd64:
 
 container_scanning_armhf:
   tags:
-    - armhf
+    - aarch64 # Use aarch64 runner as there isnt an image for armhf
   variables:
     CS_DOCKERFILE_PATH: "alpine-ntp-armhf/Dockerfile"
 
