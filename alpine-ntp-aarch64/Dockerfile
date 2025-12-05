@@ -1,18 +1,18 @@
-FROM yobasystems/alpine:3.22.2-aarch64
+FROM yobasystems/alpine:3.23.0-aarch64
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL maintainer="Dominic Taylor <dominic@yoba.systems>" \
     architecture="arm64v8/aarch64" \
-    chrony-version="4.6.1" \
-    alpine-version="3.22.2" \
-    build="30-Nov-2025" \
+    chrony-version="4.8.0" \
+    alpine-version="3.23.0" \
+    build="04-Dec-2025" \
     org.opencontainers.image.title="alpine-ntp" \
     org.opencontainers.image.description="Chrony Container image running on Alpine Linux" \
     org.opencontainers.image.authors="Dominic Taylor <dominic@yoba.systems>" \
     org.opencontainers.image.vendor="Yoba Systems" \
-    org.opencontainers.image.version="4.6.1" \
+    org.opencontainers.image.version="4.8.0" \
     org.opencontainers.image.url="https://hub.docker.com/r/yobasystems/alpine-ntp/" \
     org.opencontainers.image.source="https://github.com/yobasystems/alpine-ntp" \
     org.opencontainers.image.base.name="docker.io/yobasystems/alpine:3.22.1" \
