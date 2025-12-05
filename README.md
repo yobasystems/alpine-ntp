@@ -41,12 +41,10 @@ Two programs are included in chrony, chronyd is a daemon that can be started at 
 - `:arm64v8`, `:aarch64` - 64 bit ARM (ARMv8/aarch64)
 - `:arm32v7`, `:armhf` - 32 bit ARM (ARMv7/armhf)
 
-#### 📝 PLEASE CHECK TAGS BELOW FOR SUPPORTED ARCHITECTURES, THE ABOVE IS A LIST OF EXPLANATION
-
 ## 🏷️ Tags
 
 - `:latest` latest branch based (Automatic Architecture Selection)
-- `:master` master branch usually inline with latest
+- `:main` main branch usually inline with latest
 - `:amd64`, `:x86_64` amd64 based on latest tag but amd64 architecture
 - `:aarch64`, `:arm64v8` Armv8 based on latest tag but arm64 architecture
 - `:armhf`, `:arm32v7` Armv7 based on latest tag but arm32 architecture
