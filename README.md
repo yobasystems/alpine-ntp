@@ -100,8 +100,6 @@ It will create a new container, and set the time to the default which is time.cl
 ## Docker Compose example:
 
 ```yaml
-version: "3.9"
-
 services:
   ntp:
     build: .
@@ -133,7 +131,7 @@ services:
 
 ## 🔗 Links
 
-- [Yoba Systems](https://www.yobasystems.co.uk/)
+- [Yoba Systems](https://yoba.systems/)
 - [Github - Yoba Systems](https://github.com/yobasystems/)
 - [Dockerhub - Yoba Systems](https://hub.docker.com/u/yobasystems/)
 - [Quay.io - Yoba Systems](https://quay.io/organization/yobasystems)
