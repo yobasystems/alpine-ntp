@@ -15,6 +15,19 @@ This Container image [(yobasystems/alpine-ntp)](https://hub.docker.com/r/yobasys
 
 ---
 
+## Table of Contents
+
+- [What is Alpine Linux?](#what-is-alpine-linux)
+- [Features](#features)
+- [Architectures](#architectures)
+- [Tags](#tags)
+- [Layers & Sizes](#layers--sizes)
+- [How to use this image](#how-to-use-this-image)
+- [Image contents & Vulnerability analysis](#image-contents--vulnerability-analysis)
+- [Source Repositories](#source-repositories)
+- [Container Registries](#container-registries)
+- [Links](#links)
+
 ## 🏔️ What is Alpine Linux?
 
 Alpine Linux is a Linux distribution built around musl libc and BusyBox. The image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. This makes Alpine Linux a great image base for utilities and even production applications. Read more about Alpine Linux here and you can see how their mantra fits in right at home with Container images.
@@ -67,8 +80,6 @@ Two programs are included in chrony, chronyd is a daemon that can be started at 
 
 ### Environment Variables:
 
-### Main Chrony parameters:
-
 - `NTP_SERVERS` : time.cloudflare.com
 - `NTP_PORT` : 123
 - `NTP_MAXSKEW` : 1000.0
@@ -87,7 +98,6 @@ Two programs are included in chrony, chronyd is a daemon that can be started at 
 - `NTP_MAXSYMMETRY` : 0.5
 - `NTP_MAXPENDING` : 0.5
 - `NTP_MAXHOLDOFF` : 0.5
-- `NTP_MAXJITTER` : 0.5
 
 ## Creating an instance
 
@@ -102,7 +112,6 @@ It will create a new container, and set the time to the default which is time.cl
 ```yaml
 services:
   ntp:
-    build: .
     image: yobasystems/alpine-ntp:latest
     container_name: ntp
     restart: always
